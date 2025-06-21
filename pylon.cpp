@@ -1006,7 +1006,7 @@ struct TcpProxyService {
                 if (c.tcpReadPtr >= (mlen + 5)) {
 					if (mlen == 8) {
 
-						if (memcmp(payload + 4, "\x91\x5E\x18\xB7", 4) != 0) {
+						if (memcmp(c.tcpReadBuf + 9, "\x91\x5E\x18\xB7", 4) != 0) {
 							// 不是合法的连接
 							phy->close(sock);
 							return;
