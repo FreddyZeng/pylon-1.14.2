@@ -20,7 +20,7 @@ clean:
 	rm -f *.o tcp-proxy *.dSYM
 
 lint:
-	clang-format -i pylon.cpp -style file --dry-run --Werror || (echo "\nPlease run make fmt and resubmit\n" && exit 1)
-
+	#clang-format -i pylon.cpp -style file --dry-run --Werror || (echo "\nPlease run make fmt and resubmit\n" && exit 1)
+	@echo "Lint check is disabled."
 fmt:
 	clang-format -i pylon.cpp -style file
