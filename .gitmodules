@@ -1,6 +1,6 @@
 [submodule "ext/libzt"]
 	path = ext/libzt
-	url = https://github.com/zerotier/libzt.git
+	url = https://github.com/FreddyZeng/libzt-1.14.2.git
 [submodule "ext/ZeroTierOne"]
 	path = ext/ZeroTierOne
-	url = https://github.com/zerotier/ZeroTierOne.git
+	url = https://github.com/FreddyZeng/ZeroTierOne-1.14.2.git
