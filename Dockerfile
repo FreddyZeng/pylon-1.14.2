@@ -9,7 +9,7 @@ WORKDIR /code
 RUN make debug
 
 FROM debian:bookworm-slim
-COPY --from=build /code/pylon-debug /usr/local/bin
+COPY --from=build /code/pylon /usr/local/bin
 # EXPOSE 443
 # EXPOSE 9993/udp
 # ENV ZT_PYLON_SECRET_KEY=
