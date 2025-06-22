@@ -1006,11 +1006,11 @@ struct TcpProxyService {
                 if (c.tcpReadPtr >= (mlen + 5)) {
 					if (mlen == 4) {
 
-						if (memcmp(c.tcpReadBuf + 5, "\x91\x5E\x18\xB7", 4) != 0) {
-							// 不是合法的连接
-							phy->close(sock);
-							return;
-						}
+//						if (memcmp(c.tcpReadBuf + 5, "\x91\x5E\x18\xB7", 4) != 0) {
+//							// 不是合法的连接
+//							phy->close(sock);
+//							return;
+//						}
 
                         // Right now just sending this means the client is 'new enough' for the IP header
                         c.newVersion = true;
