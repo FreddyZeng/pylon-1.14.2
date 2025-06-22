@@ -6,7 +6,7 @@ RUN apt-get update -qq && apt-get install -y \
 COPY ./ /code
 WORKDIR /code
 
-RUN make debug
+RUN make release
 
 FROM debian:bookworm-slim
 COPY --from=build /code/pylon /usr/local/bin
