@@ -13,7 +13,7 @@
 
 #include "Phy.hpp"
 
-#define ZT_TCP_PROXY_CONNECTION_TIMEOUT_SECONDS 30
+#define ZT_TCP_PROXY_CONNECTION_TIMEOUT_SECONDS 15
 #define ZT_TCP_PROXY_TCP_PORT                   58443
 #define INVALID_SOCKET_FD                       -1
 
@@ -1114,9 +1114,9 @@ int reflect(int argc, char** argv)
 
     time_t lastDidHousekeeping = time((time_t*)0);
     for (;;) {
-        phy.poll(30000);
+        phy.poll(10000);
         time_t now = time((time_t*)0);
-        if ((now - lastDidHousekeeping) > 30) {
+        if ((now - lastDidHousekeeping) > 10) {
             lastDidHousekeeping = now;
             svc.doHousekeeping();
         }
