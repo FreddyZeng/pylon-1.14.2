@@ -961,19 +961,6 @@ struct TcpProxyService {
     void phyOnTcpAccept(PhySocket* sockL, PhySocket* sockN, void** uptrL, void** uptrN, const struct sockaddr* from)
     {
         Client& c = clients[sockN];
-		
-		if (c.udp) {
-			printf("** Closing pre-existing UDP socket for %.16llx\n", (unsigned long long)&c);
-			phy->close(c.udp, false);
-			c.udp = nullptr; // Set to null after closing
-		}
-		
-		if (c.tcp) {
-			printf("** Closing pre-existing TCP socket for %.16llx\n", (unsigned long long)&c);
-			phy->close(c.tcp, false);
-			c.tcp = nullptr; // Set to null after closing
-		}
-		
         PhySocket* udp = getUnusedUdp((void*)&c);
         if (! udp) {
             phy->close(sockN);
